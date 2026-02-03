@@ -28,19 +28,19 @@ public class ThemedDropdownButton : UIThemedElement
         {
             ColorBlock cb = dropdown.colors;
 
-            cb.normalColor = theme.actionNormal;
-            cb.highlightedColor = theme.actionHover;
-            cb.pressedColor = theme.actionPressed;
-            cb.disabledColor = theme.actionDisabled;
-            cb.selectedColor = theme.actionSelected;
+            cb.normalColor = theme.ActionNormal;
+            cb.highlightedColor = theme.ActionHover;
+            cb.pressedColor = theme.ActionPressed;
+            cb.disabledColor = theme.ActionDisabled;
+            cb.selectedColor = theme.ActionSelected;
 
             dropdown.colors = cb;
             itemToggle.colors = cb;
-            templateImage.color = theme.actionNormal;
-            itemCheckmark.color = theme.actionSelected;
+            templateImage.color = theme.ActionNormal;
+            itemCheckmark.color = theme.ActionSelected;
 
-            dropdown.captionText.color = theme.textColor;
-            itemText.color = theme.textColor;
+            dropdown.captionText.color = theme.TextColor;
+            itemText.color = theme.TextColor;
         } else
         {
             Debug.LogWarning(this + " The theme will not be applied. One of the required fields in ThemedDropDownButton is not set.");

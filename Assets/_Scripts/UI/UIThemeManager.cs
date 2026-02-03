@@ -19,7 +19,6 @@ public class UIThemeManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
 
         ApplyTheme(defaultTheme);
     }

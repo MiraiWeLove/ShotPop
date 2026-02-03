@@ -15,11 +15,11 @@ public class ThemedButton : UIThemedElement
     {
         ColorBlock cb = button.colors;
 
-        cb.normalColor = theme.actionNormal;
-        cb.highlightedColor = theme.actionHover;
-        cb.pressedColor = theme.actionPressed;
-        cb.disabledColor = theme.actionDisabled;
-        cb.selectedColor = theme.actionSelected;
+        cb.normalColor = theme.ActionNormal;
+        cb.highlightedColor = theme.ActionHover;
+        cb.pressedColor = theme.ActionPressed;
+        cb.disabledColor = theme.ActionDisabled;
+        cb.selectedColor = theme.ActionSelected;
 
         button.colors = cb;
     }

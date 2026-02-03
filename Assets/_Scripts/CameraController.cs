@@ -4,6 +4,12 @@ public class CameraController : MonoBehaviour
 {
     public float mouseSensitivity = 100f;
 
+    [Header ("Rotation Limitation")]
+    [SerializeField] private float maxUp;
+    [SerializeField] private float maxDown;
+    [SerializeField] private float maxLeft;
+    [SerializeField] private float minRight;
+
     float xRotation = 0f;
     float yRotation = 0f;
 
@@ -24,7 +30,8 @@ public class CameraController : MonoBehaviour
         xRotation -= mouseY; 
         yRotation += mouseX;
 
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, maxUp, maxDown);
+        yRotation = Mathf.Clamp(yRotation, maxLeft, minRight);
 
         transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
     }
