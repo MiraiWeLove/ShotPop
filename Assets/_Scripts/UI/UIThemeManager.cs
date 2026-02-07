@@ -5,8 +5,8 @@ public class UIThemeManager : MonoBehaviour
 {
     public static UIThemeManager Instance { get; private set; }
 
-    [SerializeField] private UITheme defaultTheme;
-    public UITheme Theme { get; private set; }
+    [SerializeField] private ScriptableUITheme defaultTheme;
+    public ScriptableUITheme Theme { get; private set; }
 
     public static event Action OnThemeChanged;
 
@@ -23,7 +23,7 @@ public class UIThemeManager : MonoBehaviour
         ApplyTheme(defaultTheme);
     }
 
-    public void ApplyTheme(UITheme theme)
+    public void ApplyTheme(ScriptableUITheme theme)
     {
         Theme = theme;
         OnThemeChanged?.Invoke();

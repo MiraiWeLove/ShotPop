@@ -3,32 +3,34 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ThemedTabBtn : UIThemedElement,
-    ISelectHandler,
-    IDeselectHandler
+public class ThemedTabBtn : UIThemedElement
 {
     [SerializeField] private Button button;
     [SerializeField] private TMP_Text text;
+    [SerializeField] private Image image;
 
-    public override void ApplyTheme(UITheme theme)
+    private bool selected = false;
+    public override void ApplyTheme(ScriptableUITheme theme)
     {
-        ColorBlock cb = button.colors;
-
-        cb.normalColor = theme.TabNormal;
-        cb.highlightedColor = theme.TabHover;
-        cb.pressedColor = theme.TabPressed;
-        cb.selectedColor = theme.PanelPrimary;
-        button.colors = cb;
-
-        text.color = theme.TextPassive;
-    }
-    public void OnSelect(BaseEventData eventData)
-    {
-        text.color = UIThemeManager.Instance.Theme.TextSelected;
+        RefreshVisual();
     }
 
-    public void OnDeselect(BaseEventData eventData)
+    public void RefreshVisual()
     {
-        text.color = UIThemeManager.Instance.Theme.TextPassive;
+        ScriptableUITheme theme = UIThemeManager.Instance.Theme;
+
+        if (selected)
+        {
+            image.color = theme.PanelPrimary;
+        }
+        else {
+            image.color = theme.TabNormal;
+        }
+
+    }
+    public void SetSelected(bool value)
+    {
+        selected = value;
+        RefreshVisual();
     }
 }

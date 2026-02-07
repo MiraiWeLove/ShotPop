@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+public class XPManager : MonoBehaviour
 {
-    public static LevelManager Instance;
+    public static XPManager Instance;
 
     [Header("Player Stats")]
     [SerializeField] public int currentXP = 0;
@@ -23,7 +23,5 @@ public class LevelManager : MonoBehaviour
     {
         currentXP += amount;
     }
-
-
 
 }

@@ -18,7 +18,7 @@ public class ThemedDropdownButton : UIThemedElement
         base.OnEnable();
     }
 
-    public override void ApplyTheme(UITheme theme)
+    public override void ApplyTheme(ScriptableUITheme theme)
     {
         if (dropdown != null
             && itemToggle != null

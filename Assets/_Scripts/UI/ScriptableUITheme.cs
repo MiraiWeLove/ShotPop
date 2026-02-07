@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu (fileName = "UITheme", menuName = "Scriptables/UI Theme")]
-public class UITheme : ScriptableObject
+[CreateAssetMenu (fileName = "ScriptableUITheme", menuName = "Scriptables/UI Theme")]
+public class ScriptableUITheme : ScriptableObject
 {
     [field: Header ("General")]
     [field: Space(4)]

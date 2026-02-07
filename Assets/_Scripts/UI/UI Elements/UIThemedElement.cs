@@ -18,5 +18,5 @@ public abstract class UIThemedElement : MonoBehaviour
         ApplyTheme(UIThemeManager.Instance.Theme);
     }
 
-    public abstract void ApplyTheme(UITheme theme);
+    public abstract void ApplyTheme(ScriptableUITheme theme);
 }

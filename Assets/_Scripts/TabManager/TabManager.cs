@@ -12,7 +12,7 @@ public class TabManager : MonoBehaviour
     [SerializeField] private List<TabView> panels;
 
     private Dictionary<S_Tab, GameObject> panelByTab = new();
-    private List<TabBtn> buttons = new();
+    private List<TabBtn> tabs = new();
 
     private S_Tab current;
 
@@ -26,6 +26,7 @@ public class TabManager : MonoBehaviour
                 panelByTab.Add(p.tab, p.panel);
         }
     }
+
     private void Start()
     {
         CreateTabs(panels);
@@ -40,7 +41,7 @@ public class TabManager : MonoBehaviour
         {
             TabBtn btn = Instantiate(tabBtnPrefab, headerPanel);
             btn.Initialize(this, t.tab);
-            buttons.Add(btn);
+            this.tabs.Add(btn);
         }
     }
 
@@ -68,8 +69,19 @@ public class TabManager : MonoBehaviour
         foreach (Transform c in header)
             Destroy(c.gameObject);
 
-        buttons.Clear();
+        tabs.Clear();
     }
+
+    //Go through every tab and set it's state (selected or not) so it will refresh it's visual based on whether it's selected or not.
+    public void Select(TabBtn tab)
+    {
+        foreach (var t in tabs)
+        {
+            ThemedTabBtn tabTheme = t.GetComponent<ThemedTabBtn>();
+            tabTheme.SetSelected(t == tab);
+        }
+    }
+
 
 #if UNITY_EDITOR
     private void OnValidate()

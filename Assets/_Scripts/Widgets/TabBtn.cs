@@ -22,8 +22,10 @@ public class TabBtn : MonoBehaviour
     {
         if (manager != null)
         {
+            manager.Select(this);
             manager.OpenTab(tab);
         }
     }
+
 
 }

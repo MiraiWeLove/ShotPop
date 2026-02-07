@@ -11,7 +11,7 @@ public class ThemedButton : UIThemedElement
         base.OnEnable();
     }
 
-    public override void ApplyTheme(UITheme theme)
+    public override void ApplyTheme(ScriptableUITheme theme)
     {
         ColorBlock cb = button.colors;
 

@@ -35,7 +35,7 @@ public class EasyBall : Entities
     {
         if (health >= 0)
         {
-            LevelManager.Instance.AddXP(1);
+            XPManager.Instance.AddXP(1);
             Destroy(gameObject);
             return;
         }

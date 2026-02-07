@@ -28,9 +28,9 @@ public class EntitySpawner : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    public void StartSpawning()
     {
-        spawnRoutine = StartCoroutine(SpawnLoop());
+        if (spawnRoutine == null) spawnRoutine = StartCoroutine(SpawnLoop());
     }
 
     private void OnDisable()

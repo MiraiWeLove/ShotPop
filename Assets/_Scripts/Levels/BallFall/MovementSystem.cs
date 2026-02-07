@@ -27,6 +27,8 @@ public class MovementSystem : MonoBehaviour
 
     private void Update()
     {
+        if (!GameManager.IsMovementAllowed) return;
+
         for (int i = entities.Count - 1; i >= 0; i--)
         {
             entities[i].Move();
